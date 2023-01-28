@@ -4,11 +4,10 @@ import (
 	"fmt"
 )
 
-var wiek int
+var print = fmt.Print
 
 func main() {
 	// const name, age = "Robert", 34
-	// wiek = 35
 	// fmt.Println(age, name, wiek)
 	// fmt.Printf("Programista %v %v ma %v lata.", name, age, wiek)
 	//
@@ -68,4 +67,11 @@ func main() {
 		six
 	)
 	println(one, two, three, four, five, six)
+
+	// USER INPUT
+
+	var userName string
+	print("Enter your name:\n") // uzyty alias  ----> var print = fmt.Print
+	fmt.Scan(&userName)
+	fmt.Printf("Hello %v\n", userName)
 }
