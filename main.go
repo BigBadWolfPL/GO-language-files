@@ -74,4 +74,28 @@ func main() {
 	print("Enter your name:\n") // uzyty alias  ----> var print = fmt.Print
 	fmt.Scan(&userName)
 	fmt.Printf("Hello %v\n", userName)
+
+	// STRINGI
+
+	myStr := "Python"
+
+	fmt.Println(myStr[0], string(myStr[0]))
+	fmt.Println(myStr[1], string(myStr[1]))
+	fmt.Println(myStr[2], string(myStr[2]))
+	fmt.Println(myStr[3], string(myStr[3]))
+	fmt.Println(myStr[4], string(myStr[4]))
+	fmt.Println(myStr[5], string(myStr[5]))
+	fmt.Printf("Długość: %v \n", len(myStr))
+
+	// stringi są niemutowlane jak w pythonie
+
+	editedMyStr := []byte(myStr)
+	editedMyStr[0] = 'Y' // teraz można edytować (podać index)
+
+	fmt.Println(editedMyStr) // []byte(x) -->runy, mozna edytowac, jesli spowrotem do stringa to string(x)
+	fmt.Println(string(editedMyStr))
+
+	editedMyStr[0] = 'M'
+	fmt.Println(string(editedMyStr))
+
 }
