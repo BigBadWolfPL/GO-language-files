@@ -105,6 +105,8 @@ func main() {
 		fmt.Println(string(editedMyStr))
 	*/
 
+	// SPLIT, JOIN
+
 	anotherString := "Robert weterynarz"
 
 	fmt.Printf("Lenght with len() = %v \nLenght with utf8.RuneCountInString() = %v \n", len(anotherString), utf8.RuneCountInString(anotherString))
@@ -113,6 +115,43 @@ func main() {
 	anotherStringSplit := strings.Split(anotherString, " ")
 
 	fmt.Printf("%v\n%v \n", anotherStringSplit[0], anotherStringSplit[1])
+
+	// JOIN
+
+	// OPTION 1:
+
+	anotherStringJoin := strings.Join([]string{anotherStringSplit[0], anotherStringSplit[1]}, " ")
+	fmt.Printf("Join: %v \n", anotherStringJoin)
+
+	// OPTION 2:
+
+	someString := "Ala ma kota \n"
+	someString += "Kot ma Ale"
+
+	fmt.Println("Some string:\n", someString)
+
+	otherString := anotherStringSplit[0]
+	otherString += " programista"
+
+	println("Other String:", otherString)
+
+	otherString += "programista"
+
+	fmt.Println("Other String added:")
+
+	//OPTION 3:
+	programista := "programista"
+	weterynarz := anotherStringSplit[1]
+
+	newSTRING := &strings.Builder{}
+	newSTRING.WriteString("Robert ")
+	newSTRING.WriteString(programista)
+	newSTRING.WriteString(" i ")
+	newSTRING.WriteString(weterynarz)
+
+	fmt.Printf("\nMetoda: &strings.Builder{}\nWartość: %v\nTyp: %T\nKonwersja Typu: %T\n", newSTRING, newSTRING, newSTRING.String())
+
+	// OPCJA 2 ZALECANA!
 
 	// ZMIANA TYPÓW
 	// int --> string
@@ -123,4 +162,13 @@ func main() {
 
 	fmt.Printf("myInt: %T \nmyStr: %T\nonceAgainInt: %T \n", myInt, myStr, onceAgainInt)
 
+	// CONTAINS + WARUNEK
+
+	STRING := newSTRING.String() // trzeba zmienić typ bo domyslinie &strings.Builder zwraca typ: *strings.Builder
+
+	if strings.Contains(STRING, "programista") {
+		fmt.Println("JESTEŚ PROGRAMISTĄ")
+	} else {
+		fmt.Println("JESTEŚ WETERYNARZEM")
+	}
 }
