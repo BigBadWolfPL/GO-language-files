@@ -114,6 +114,7 @@ func main() {
 
 	anotherStringSplit := strings.Split(anotherString, " ")
 
+	fmt.Println("anotherStringSplit: ", anotherStringSplit)
 	fmt.Printf("%v\n%v \n", anotherStringSplit[0], anotherStringSplit[1])
 
 	// JOIN
@@ -144,12 +145,14 @@ func main() {
 	weterynarz := anotherStringSplit[1]
 
 	newSTRING := &strings.Builder{}
-	newSTRING.WriteString("Robert ")
+	newSTRING.WriteString(anotherStringSplit[0] + " ")
 	newSTRING.WriteString(programista)
 	newSTRING.WriteString(" i ")
 	newSTRING.WriteString(weterynarz)
 
-	fmt.Printf("\nMetoda: &strings.Builder{}\nWartość: %v\nTyp: %T\nKonwersja Typu: %T\n", newSTRING, newSTRING, newSTRING.String())
+	newSTRINGstring := newSTRING.String()
+
+	fmt.Printf("\nMetoda: &strings.Builder{}\nWartość: %v\nTyp: %T\nKonwersja Typu: %T\njeszcze raz konwercja: %T \n", newSTRING, newSTRING, newSTRING.String(), newSTRINGstring)
 
 	// OPCJA 2 ZALECANA!
 
@@ -157,8 +160,8 @@ func main() {
 	// int --> string
 
 	myInt := 100
-	myStr := strconv.Itoa(myInt)
-	onceAgainInt, _ := strconv.Atoi(myStr) // deklaracja
+	myStr := strconv.Itoa(myInt)           // INT to ASCII
+	onceAgainInt, _ := strconv.Atoi(myStr) // deklaracja ASCII to INT
 
 	fmt.Printf("myInt: %T \nmyStr: %T\nonceAgainInt: %T \n", myInt, myStr, onceAgainInt)
 
@@ -170,5 +173,22 @@ func main() {
 		fmt.Println("JESTEŚ PROGRAMISTĄ")
 	} else {
 		fmt.Println("JESTEŚ WETERYNARZEM")
+	}
+
+	i := 1
+
+	switch i {
+	case 0:
+		fmt.Println("Wartość 0")
+	case 1:
+		fmt.Println("Wartość 1")
+	case 2:
+		fmt.Println("Wartość 2")
+	case 3:
+		fmt.Println("Wartość 3")
+	case 15:
+		fmt.Println("Wartość 15")
+	default:
+		fmt.Println("Inna wartość")
 	}
 }
