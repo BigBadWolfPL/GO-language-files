@@ -191,4 +191,20 @@ func main() {
 	default:
 		fmt.Println("Inna wartość")
 	}
+
+	// else if
+
+	var choiceNum int
+
+	fmt.Println("Podaj numer:")
+	fmt.Scan(&choiceNum)
+
+	if choiceNum < 5 {
+		fmt.Println("Liczba mniejsza od 5")
+	} else if choiceNum == 5 {
+		fmt.Println("Liczba = 5")
+	} else {
+		fmt.Println("Liczba większa od 5")
+	}
+
 }
