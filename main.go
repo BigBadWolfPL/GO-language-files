@@ -9,6 +9,21 @@ import (
 
 var print = fmt.Print
 
+func AddTwoIntegers(x, y int) int {
+	return x + y
+}
+
+func PrintStupidMessage(m string) {
+	fmt.Println(m)
+}
+
+func PasswordCheck(password string) (string, bool) {
+	if password == "mocnehaslo1234" {
+		return "Hasło OK", true
+	}
+	return "Błędne hasło", false
+}
+
 func main() {
 
 	/*
@@ -192,19 +207,32 @@ func main() {
 		fmt.Println("Inna wartość")
 	}
 
-	// else if
+	// FUNKCJE
 
-	var choiceNum int
+	wynik := AddTwoIntegers(5, 7)
 
-	fmt.Println("Podaj numer:")
-	fmt.Scan(&choiceNum)
+	fmt.Println("Wynik funkcji AddTwoIntegers =", wynik)
 
-	if choiceNum < 5 {
-		fmt.Println("Liczba mniejsza od 5")
-	} else if choiceNum == 5 {
-		fmt.Println("Liczba = 5")
+	PrintStupidMessage("Głupia Wiadomość")
+
+	/*var has string
+	fmt.Println("Podaj Hasło:")
+	fmt.Scan(&has)
+	*/
+
+	fmt.Println(PasswordCheck("mocnehaslo1234"))
+
+	fmt.Printf("\n\n NOWE HASŁO \n\n")
+
+	msg, wartoscbool := PasswordCheck("mocnehaslo1234") // funkcja zwraca 2 wartosci, przypisałem je do 2 zmiennych, drukuje poniżej
+
+	fmt.Println(msg)
+	fmt.Println(wartoscbool)
+
+	if wartoscbool { // można dodać wykrzyknik przed zmienna : !wartosc co bedzie znaczyć "jeśli różna od true"
+		fmt.Println("Zwracana wartość = true")
 	} else {
-		fmt.Println("Liczba większa od 5")
+		fmt.Println("Zwracana wartość = false")
 	}
 
 }
