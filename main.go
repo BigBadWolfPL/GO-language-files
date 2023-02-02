@@ -24,6 +24,24 @@ func PasswordCheck(password string) (string, bool) {
 	return "Błędne hasło", false
 }
 
+func sum(nums ...int) {
+	fmt.Print(nums, " ")
+	total := 0
+
+	for _, num := range nums {
+		total += num
+	}
+	fmt.Println(total)
+}
+
+func MultiplyAndSum(numbers ...int) {
+	for _, num := range numbers {
+		fmt.Println(num)
+		fmt.Println(num*num + num)
+		fmt.Printf("\n\n")
+	}
+}
+
 func main() {
 
 	/*
@@ -235,4 +253,6 @@ func main() {
 		fmt.Println("Zwracana wartość = false")
 	}
 
+	sum(1, 2, 3)
+	MultiplyAndSum(1, 2, 3, 4, 5, 6)
 }
