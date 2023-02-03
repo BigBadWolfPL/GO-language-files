@@ -42,9 +42,20 @@ func MultiplyAndSum(numbers ...int) {
 	}
 }
 
+var (
+	doctorNumber float64 = 3.14
+	url          string  = "www.vetcontact.pl" // trzeba przypisywać typy
+	userInputVar string                        // ale nie trzeba przypisywać wartości
+	actorName    int64
+)
+
 func main() {
+	actorName = 69
+	fmt.Println("Podaj tekst do zmiennej:")
+	fmt.Scan(&userInputVar)
 
 	/*
+
 
 		// const name, age = "Robert", 34
 		// fmt.Println(age, name, wiek)
@@ -255,4 +266,8 @@ func main() {
 
 	sum(1, 2, 3)
 	MultiplyAndSum(1, 2, 3, 4, 5, 6)
+
+	fmt.Printf("Zmienna1: %v, %T \nZmienna2: %v, %T \n", actorName, actorName, doctorNumber, doctorNumber)
+	fmt.Println(url)
+	fmt.Println(userInputVar)
 }
